@@ -4,7 +4,7 @@
 #
 Name     : bolt
 Version  : 0.6
-Release  : 2
+Release  : 3
 URL      : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.6/bolt-0.6.tar.gz
 Source0  : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.6/bolt-0.6.tar.gz
 Summary  : No detailed summary available
@@ -89,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544052747
+export SOURCE_DATE_EPOCH=1544074618
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
 ninja -v -C builddir
 
@@ -97,6 +97,9 @@ ninja -v -C builddir
 mkdir -p %{buildroot}/usr/share/package-licenses/bolt
 cp COPYING %{buildroot}/usr/share/package-licenses/bolt/COPYING
 DESTDIR=%{buildroot} ninja -C builddir install
+## install_append content
+mv %{buildroot}/etc/dbus-1/* %{buildroot}/usr/share/dbus-1/
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -113,6 +116,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/share/dbus-1/interfaces/org.freedesktop.bolt.xml
 /usr/share/dbus-1/system-services/org.freedesktop.bolt.service
+/usr/share/dbus-1/system.d/org.freedesktop.bolt.conf
 /usr/share/polkit-1/actions/org.freedesktop.bolt.policy
 /usr/share/polkit-1/rules.d/org.freedesktop.bolt.rules
 
