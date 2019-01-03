@@ -4,7 +4,7 @@
 #
 Name     : bolt
 Version  : 0.7
-Release  : 4
+Release  : 5
 URL      : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.7/bolt-0.7.tar.gz
 Source0  : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.7/bolt-0.7.tar.gz
 Summary  : Thunderbolt 3 device manager
