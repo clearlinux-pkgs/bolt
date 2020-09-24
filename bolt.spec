@@ -4,7 +4,7 @@
 #
 Name     : bolt
 Version  : 0.9
-Release  : 7
+Release  : 8
 URL      : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.9/bolt-0.9.tar.gz
 Source0  : https://gitlab.freedesktop.org/bolt/bolt/-/archive/0.9/bolt-0.9.tar.gz
 Summary  : No detailed summary available
